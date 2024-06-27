@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Halloween | 2021</title>
+<link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+<header>
+   <a href = "#"  class = "logo">Happy Halloween</a>
+<ul>
+  <li><a href= "#" class="active">Home</a></li>
+  <li><a href = "#">About</a></li>
+  <li><a href = "#">Work</a></li>
+  <li><a href = "#">Contact</a></li>
+</ul>
+</header>
+<section>
+    <img src="stars.png" id="stars">
+    <img src="moon.png" id="moon">
+    <img src="mountains_behind.png" id="mountains_behind">
+    <h2 id ="text">Moon Light</h2>
+    <a href = "#sec" id ="btn">Explore</a>
+    <img src="mountains_front.png" id="mountains_front">
+    <div id = "progressbar"></div>
+    <div id = "scrollPath"></div>
+</section>
+<div class="sec" id="sec">
+    <h2>Halloween:A spooky night</h2>
+    <p>Halloween is that time of the year when our spooky senses come to life! Every year, the world celebrates 
+     Halloween on October 31; where we put on our avant-garde costumes and party, collect candies, watch horror
+     movies, and read classic gothic novels.
+     However, do you know that Halloween is an age-old tradition that originated from an ancient Celtic festival of Samhain?<br><br>
+     Trick-or-treating is a customary celebration for children on Halloween. Children go in costume from house to house,
+      asking for treats such as candy or sometimes money, with the question, "Trick or treat?" The word "trick" implies
+     a "threat" to perform mischief on the homeowners or their property if no treat is given.
+     The practice is said to have roots in the medieval practice of mumming, which is closely related to souling.John 
+     Pymm wrote that "many of the feast days associated with the presentation of mumming plays were celebrated by the
+      Christian Church." These feast days included All Hallows' Eve, Christmas, Twelfth Night and Shrove Tuesday. Mumming
+       practiced in Germany, Scandinavia and other parts of Europe, involved masked persons in fancy dress who "paraded
+        the streets and entered houses to dance or play dice in silence".
+     <br><br>Halloween is that time of the year when our spooky senses come to life! Every year, the world celebrates
+      Halloween on October 31; where we put on our avant-garde costumes and party, collect candies, watch horror movies,
+       and read classic gothic novels.
+     However, do you know that Halloween is an age-old tradition that originated from an ancient Celtic festival of Samhain?
+     <br><br>Trick-or-treating is a customary celebration for children on Halloween. Children go in costume from house
+      to house, asking for treats such as candy or sometimes money, with the question, "Trick or treat?" The word 
+      "trick" implies a "threat" to perform mischief on the homeowners or their property if no treat is given.
+     The practice is said to have roots in the medieval practice of mumming, which is closely related to souling.John
+      Pymm wrote that "many of the feast days associated with the presentation of mumming plays were celebrated by 
+      the Christian Church." These feast days included All Hallows' Eve, Christmas, Twelfth Night and Shrove Tuesday.
+       Mumming practiced in Germany, Scandinavia and other parts of Europe, involved masked persons in fancy dress who
+        "paraded the streets and entered houses to dance or play dice in silence".</p>
+    </div>
+
+
+
+    <script>
+    let stars = document.getElementById('stars');
+    let moon = document.getElementById('moon');
+    let mountains_behind = document.getElementById('mountains_behind');
+    let text = document.getElementById('text');
+    let btn = document.getElementById('btn');
+    let mountains_front = document.getElementById('mountains_front');
+    let header = document.querySelector('header');
+    let progress = document.getElementById('progressbar');
+
+    window.addEventListener('scroll', function(){
+    let value = window.scrollY;
+    stars.style.left = value * 0.25 + 'px';
+    moon.style.top = value * 1.05 + 'px';
+    mountains_behind.style.top = value * 0.5 + 'px';
+    mountains_front.style.top = value * 0 + 'px';
+    text.style.marginRight = value * 4 + 'px';
+    text.style.marginTop = value * 1.5 + 'px';
+    btn.style.marginTop = value * 1.5 + 'px';
+    header.style.top = value * 0.5 + 'px';
+
+    let totalHeight = document.body.scrollHeight - window.innerHeight
+    window.onscroll = function(){
+      let progressHeight = (window.pageYOffset / totalHeight) * 100;
+      progress.style.height = progressHeight + "%";
+    }
+  
+  })
+    </script>
+</body>
+</html>
